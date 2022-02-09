@@ -42,7 +42,155 @@
         function EnterTab(InputId,Evento){
 
             if(Evento.keyCode == 13){       
+<!DOCTYPE html>
+<html lang="pt-br">
 
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../images/favicon.ico">
+
+    <title>Login</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <script>
+        let usuarios = [
+            {login: 'raphael', pwd: '123'},
+            {login: 'maria', pwd: '321'},
+            {login: 'paulo', pwd: '456'},
+            {login: 'jônatas', pwd: '654'},
+            {login: 'mario', pwd: '789'},
+        ];
+        
+        function validarUsuario(login,pwd){
+            document.getElementById('msgSucesso').style.display = "none";
+            document.getElementById('msgErro').style.display = "none";
+            for (i=0; i<usuarios.length; i++) {
+                if (usuarios[i].login == login && usuarios[i].pwd == pwd) {
+                    document.getElementById('msgSucesso').style.display = "block";
+                    return;
+                }
+            }
+            document.getElementById('msgErro').style.display = "block";
+        }
+
+        function EnterTab(InputId,Evento){
+
+            if(Evento.keyCode == 13){       
+
+                document.getElementById(InputId).focus();
+
+            }
+
+        }
+    </script>
+
+</head>
+
+<body class="page-header-fixed page-sidebar-fixed">
+    <div class="page-content-wrapper">
+        <div class="page-content">
+            <div class="row">
+                <div class="col-lg-12">
+                
+                  <!-- -->
+                
+                    <h1 class="page-header">
+                        Login
+                    </h1>
+                    <!-- <ol class="breadcrumb">
+                        <li>
+                            <i class="fa fa-home"></i>  <a href="index.html">Página Inicial</a>
+                        </li>
+                        <li><i class="fa fa-desktop"></i> Templates de Telas</li><li class="active">Página de Login</li>
+                    </ol> -->
+                </div>
+            </div>
+            <!-- /.row -->
+            <div class="row" style="min-height:650px;" id="iniciodoconteudo">
+                <!-- <div class="col-lg-12"><a href="#iniciodoconteudo" id="iniciodoconteudo" accesskey="2" class="oculto">Início do conteúdo</a> -->
+                    <div id="msgSucesso" class="alert alert-success" role="alert" style="display: none; height:50px; padding-top:13px;">
+                        <strong>Login efetuado com sucesso.</strong> Bem vindo ao sistema!
+                    </div>
+                    <div id="msgErro" class="alert alert-danger" role="alert" style="display: none; height:50px; padding-top:13px;">
+                        <strong>Acesso negado!</strong> Usuário ou senha inválido.
+                    </div>
+                 <div class="row">
+                
+                <div class="col-md-3"></div>
+
+
+    <div class="col-sd-12 col-sd-offset-6" style="margin:auto; max-width:450px; margin-top:60px;">
+
+        <div class="padded">
+            <div class="login box" style="">
+
+                <div class="box-header">
+                    <span class="title" style="font-size:14px; margin-left:10px;">Usuário e Senha</span>
+                </div>
+
+                <div class="box-content padded" style="padding:20px;">
+                    <div class="row" style="padding-bottom:10px;">
+                        <div class="col-md-10">
+                        </div>
+                    </div>
+                    <form class="separate-sections">
+                        <div class="input-group addon-left" style="margin-bottom:15px;">
+                            <span class="input-group-addon" href="#">
+                              <i class="fa fa-user"></i>
+                            </span>
+                            <input type="text" id="usuario" placeholder="Informe o seu usuário" class="form-control" onkeydown="EnterTab('senha',event)">
+                        </div>
+                       
+                        <div class="input-group addon-left" style="margin-bottom:15px;">
+                            <span class="input-group-addon" href="#">
+                                <i class="fa fa-key"></i>
+                            </span>
+                            <input type="password" id="senha" placeholder="Informe a sua senha de acesso" onkeydown="EnterTab('btn',event)" class="form-control" >
+                        </div>
+
+                        <div style="margin-top:25px;">
+                            <button type="button" id="btn" onclick="validarUsuario(document.getElementById('usuario').value, document.getElementById('senha').value);" class="btn btn-lg btn-primary" style="width:100%;"><i class="fa fa-sign-in"></i> Entrar</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+
+</div>
+
+<div class="col-md-3"></div>
+                
+     
+                
+                    
+                   
+
+                  
+                    
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </div> 
+                <!-- /#page-wrapper -->
+        
+    
+    </div>  
+    
+</body>
                 document.getElementById(InputId).focus();
 
             }
