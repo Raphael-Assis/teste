@@ -35,9 +35,11 @@
         ]
 
         function localizar(id) {
+            document.getElementById('msgSucesso').style.display = "none";
+            document.getElementById('msgErro').style.display = "none";
             document.getElementById('novo').disabled = false;
-	    document.getElementById('nome').value = "";
-            document.getElementById('func').value = "";
+            document.getElementById('nome').value = "";
+            document.getElementById('func').value = "";   
 
             for (i=0; i<usuarios.length; i++) {
                 if (usuarios[i].id == id) {
